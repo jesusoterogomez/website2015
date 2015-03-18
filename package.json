@@ -1,0 +1,22 @@
+{
+  "name": "jesusoterogomez.com",
+  "version": "0.0.1",
+  "author": {
+    "name": "Jesús Otero",
+    "email": "hello@jesusoterogomez.com",
+    "url": "http://jesusoterogomez.com"
+  },
+  "dependencies": {
+    "gulp": ">= 3.8.11",
+    "gulp-ruby-sass": ">= 1.0.0-alpha.3",
+    "gulp-connect": ">= 2.2.0",
+    "gulp-open": ">= 0.3.2",
+    "gulp-clean": ">= 0.3.1"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "gulp-compass": "^2.0.3"
+  }
+}
