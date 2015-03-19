@@ -1,5 +1,49 @@
+// Reset
+@import url(http://jesusoterogomez.github.io/css/reset.css); //Normalizes CSS positioning and sizes between browsers
+
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+// Color Theme - http://adobe.ly/1LuBvVO
+$color_0:#FFF;
+$color_1:#2A3542; //main
+$color_2:#5B6E84;
+$color_3:#FF5F59; //highlight
+$color_4:#FF6C60;
+$color_5:#FF8070;
+
+// Base Theme
+$text-color:       $color_0;
+$background-color: $color_1;
+$highlight-color:  $color_3;
+
+// Default Sizes
+$default-font-size: 10pt;
+$title-size:        2.2em;
+$subtitle-size:     1.6em;
+$paragraph-size:    1.2em;
+$content-width:     90%;
+$section-spacing:   3em;
+
+// Font Families
+$default-font: 'Lato', sans-serif;
+
 body{
-	position: relative;
+	background:$background-color;
+	font-size: $default-font-size;
+	font-family: $default-font;
+	color:$text-color;
+	position:relative;
 	width: 100%;
-	background:#ddd;
+	text-align: center;
+	/*Top decoration*/
+	border-top:3px solid $highlight-color;
+}
+// Content Wrapper
+.content{
+	width: $content-width;
+}
+// Section
+section{
+	padding:$section-spacing 0;
 }

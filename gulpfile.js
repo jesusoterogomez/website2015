@@ -31,6 +31,7 @@ gulp.task('compass', function() {
       css: 'css',
       sass: 'scss'
     }))
+    .on('error', logError)
     .pipe(gulp.dest(dir_build+'/css'))
     .pipe(connect.reload());
 });
@@ -50,18 +51,6 @@ gulp.task('media', function(){
   .pipe(gulp.dest(dir_build + '/media'));
 });
 
-// Compile SCSS (SaSS)
-// gulp.task('styles', function() {
-//   return sass('scss/styles.scss', {
-//     style: 'compact',
-//     compass: true
-//   })
-//   .on('error', function (err) { 
-//     console.log(err.message); 
-//   })
-//   .pipe(gulp.dest(dir_build + 'css/'));
-// });
-
 // Open a web browser window
 gulp.task('open:www', ['connect'], function() {
   //
@@ -73,17 +62,21 @@ gulp.task('open:www', ['connect'], function() {
 
 // Start a web server
 gulp.task('connect', ['build'], function() {
-  //
   return connect.server({
     root: dir_build,
     livereload: true,
   });
 });
 
-//
+function logError (error) {
+    //If you want details of the error in the console
+    console.log(error.toString());
+
+    this.emit('end');
+}
+
 gulp.task('serve', ['open:www']);
 
-//
 gulp.task('clean', function() {
   gulp.src(dir_dist,  {read: false})
   .pipe(clean({force:true}))
